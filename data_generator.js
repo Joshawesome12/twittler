@@ -4,10 +4,15 @@
  */
 
 // set up data structures
-window.streams = {};
+window.streams = {};  //streams.users.mracus => [];
+// var streams = {
+//     home:[],
+//     users:{shawndrost:[],sharksforcheap:[],mracus:[],douglascalhoun:[]}
+//     }
+// }
 streams.home = [];
 streams.users = {};
-streams.users.shawndrost = [];
+streams.users.shawndrost = []; 
 streams.users.sharksforcheap = [];
 streams.users.mracus = [];
 streams.users.douglascalhoun = [];
