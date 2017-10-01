@@ -110,15 +110,14 @@ li a:hover {
 
         }
 
-
+// var $test = $('<div>hello</div>');
+            // $test.appendTo($body);
 
 //specific user tweets-----------------------------------------------------------
         //not running because not yet invoked
 //douglascalhoun
           function userTweet1(){
             var length = streams.users.douglascalhoun.length;
-            // var $test = $('<div>hello</div>');
-            // $test.appendTo($body);
             clicked  = false;
             for (var i = 0; i < length; i++){
               var tweet = streams.users.douglascalhoun[i];
@@ -128,53 +127,45 @@ li a:hover {
             }
         }
       $( ".userButton1" ).on( "click" , userTweet1);
-    // $( ".userButton1 " ).on( "click", userTweet1);
 
 //mracus
-    // var userIndex2 = 0;
-    //       function userTweet2(){
-    //       setTimeout(function(){ 
-    //         if (streams.users.mracus[userIndex2] !== undefined){
-    //           var tweet = streams.users.mracus[userIndex2];
-    //           var $tweet = $('<div></div>');
-    //           $tweet.text('@' + tweet.user + ': ' + tweet.message + tweet.created_at);
-    //           $tweet.appendTo($body);
-    //           userIndex2 ++;
-    //         }
-    //           userTweet2();
-    //       } ,0);
-    //     }
-    // $( ".userButton2 " ).on( "click", userTweet2);
+          function userTweet2(){
+            var length = streams.users.mracus.length;
+            clicked = false;
+            for (var i = 0; i < length;i++){
+              var tweet = streams.users.mracus[i];
+              var $tweet = $('<div></div>');
+              $tweet.text('@' + tweet.user + ': ' + tweet.message + tweet.created_at);
+              $tweet.appendTo($body);
+            }
+        }
+    $( ".userButton2 " ).on( "click", userTweet2);
 
-    // var userIndex3 = 0;
-    //       function userTweet3(){
-    //       setTimeout(function(){ 
-    //         if (streams.users.sharksforcheap[userIndex3] !== undefined){
-    //           var tweet = streams.users.sharksforcheap[userIndex3];
-    //           var $tweet = $('<div></div>');
-    //           $tweet.text('@' + tweet.user + ': ' + tweet.message + tweet.created_at);
-    //           $tweet.appendTo($body);
-    //           userIndex3 ++;
-    //         }
-    //           userTweet3();
-    //       } ,0);
-    //     }
-    // $( ".userButton3 " ).on( "click", userTweet3);
+//sharksforcheap
+          function userTweet3(){
+              var length = streams.users.sharksforcheap.length;
+              clicked = false;
+              for (var i = 0; i < length; i++){
+              var tweet = streams.users.sharksforcheap[i];
+              var $tweet = $('<div></div>');
+              $tweet.text('@' + tweet.user + ': ' + tweet.message + tweet.created_at);
+              $tweet.appendTo($body);
+            }
+        }
+    $( ".userButton3 " ).on( "click", userTweet3);
 
-    // var userIndex4 = 0;
-    //       function userTweet4(){
-    //       setTimeout(function(){ 
-    //         if (streams.users.shawndrost[userIndex4] !== undefined){
-    //           var tweet = streams.users.shawndrost[userIndex4];
-    //           var $tweet = $('<div></div>');
-    //           $tweet.text('@' + tweet.user + ': ' + tweet.message + tweet.created_at);
-    //           $tweet.appendTo($body);
-    //           userIndex4 ++;
-    //         }
-    //           userTweet4();
-    //       } ,0);
-    //     }
-    // $( ".userButton4 " ).on( "click", userTweet4);
+//shawndrost
+          function userTweet4(){
+            var length = streams.users.shawndrost.length;
+            clicked = false;
+            for (var i = 0; i < length; i++){
+              var tweet = streams.users.shawndrost[i];
+              var $tweet = $('<div></div>');
+              $tweet.text('@' + tweet.user + ': ' + tweet.message + tweet.created_at);
+              $tweet.appendTo($body);
+            }
+        }
+    $( ".userButton4 " ).on( "click", userTweet4);
 
     
 
