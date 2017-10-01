@@ -1,22 +1,56 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <script src="jquery.js"></script>
-    <script src="data_generator.js"></script>
-
-  </head>
-  <body>
-
-<div class="navbar">
+  <div class="navbar">
   <ul>
   <li><a class="active" href="#home">Home</a></li>
   <li><a href="#news">News</a></li>
   <li><a href="#contact">Notifications</a></li>
   <li><a href="#about">Messages</a></li>
-  </ul>
+  </ul> 
   </div>
+    <script src="jquery.js"></script>
+    <script src="data_generator.js"></script>
+  </head>
+  <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  !-->
+  <body>
+
+<div class="userSpan">
+  <span>Users:</span>
+  <button class = userButton><p class = userButton1>douglascalhoun</p></button>
+  <button class = userButton><p class = userButton2>mracus</p></button>
+  <button class = userButton><p class = userButton3>sharksforcheap</p></button>
+  <button class = userButton><p class = userButton4>shawndrost</p></button>
+</div>
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  !-->
   <style>
-ul {
+
+.userButton{
+  background-color: white;
+    border: none;
+    color: black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: underline;
+    display: inline-block;
+    font-size: 15px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.userSpan{
+}
+
+  body{
+  background-image: url("http://icons.iconarchive.com/icons/uiconstock/socialmedia/512/Twitter-icon.png");
+    background-repeat: no-repeat;
+    background-position: right top;
+    margin-right: 200px;
+    background-attachment: fixed;
+    background-size: 200px;
+    background-color:white;
+}
+  ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -39,13 +73,12 @@ li a {
 li a:hover {
     background-color: #0084b4;
 }
-
   </style>
+  <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  !-->
     <script>
-
       $(document).ready(function(){
         var $body = $('body');
-        $body.html('');
+        // $body.html('');
 
         var index = 0;
         while(index < streams.home.length ){
@@ -56,38 +89,98 @@ li a:hover {
           index ++;
         }
         displayNewTweet();
-        //set timeout
-        //check if next element is undefined
-        //if defined, display
+        // set timeout
+        // check if next element is undefined
+        // if defined, display
 
+
+        // all tweets
+        var clicked = true;
         function displayNewTweet(){
           setTimeout(function(){ 
-            if (streams.home[index] !== undefined){
+            if (streams.home[index] !== undefined && clicked){
               var tweet = streams.home[index];
               var $tweet = $('<div></div>');
               $tweet.text('@' + tweet.user + ': ' + tweet.message + tweet.created_at);
               $tweet.appendTo($body);
               index ++;
-            }
-              displayNewTweet();
-          } ,0);
+              $( ".userButton1" ).on( "click" , function(){var $test = $('<div>calling userTweet1</div>');$test.appendTo($body);userTweet1();
+                });
+              }
+                displayNewTweet();
+            } ,0);
+
         }
-          var userIndex = 0;
-        //   function displayNewTweet(){
-        //   setTimeout(function(){ 
-        //     if (streams.users.mracus[userIndex] !== undefined){
-        //       var tweet = streams.users.mracus[userIndex];
-        //       var $tweet = $('<div></div>');
-        //       $tweet.text('@' + tweet.user + ': ' + tweet.message + tweet.created_at);
-        //       $tweet.appendTo($body);
-        //       userIndex ++;
-        //     }
-        //       displayNewTweet();
-        //   } ,0);
-        // }
+
+
+
+//specific user tweets-----------------------------------------------------------
+        //not running because not yet invoked
+//douglascalhoun
+          function userTweet1(){
+            var length = streams.users.douglascalhoun.length;
+            var $test = $('<div>hello</div>');
+            $test.appendTo($body);
+            clicked  = false;
+            for (var i = 0; i < length; i++){
+              var tweet = streams.users.douglascalhoun[i];
+              var $tweet = $('<div></div>');
+              $tweet.text('@' + tweet.user + ': ' + tweet.message + tweet.created_at + i);
+              $tweet.appendTo($body);
+            }
+        }
+
+    // $( ".userButton1 " ).on( "click", userTweet1);
+
+//mracus
+    // var userIndex2 = 0;
+    //       function userTweet2(){
+    //       setTimeout(function(){ 
+    //         if (streams.users.mracus[userIndex2] !== undefined){
+    //           var tweet = streams.users.mracus[userIndex2];
+    //           var $tweet = $('<div></div>');
+    //           $tweet.text('@' + tweet.user + ': ' + tweet.message + tweet.created_at);
+    //           $tweet.appendTo($body);
+    //           userIndex2 ++;
+    //         }
+    //           userTweet2();
+    //       } ,0);
+    //     }
+    // $( ".userButton2 " ).on( "click", userTweet2);
+
+    // var userIndex3 = 0;
+    //       function userTweet3(){
+    //       setTimeout(function(){ 
+    //         if (streams.users.sharksforcheap[userIndex3] !== undefined){
+    //           var tweet = streams.users.sharksforcheap[userIndex3];
+    //           var $tweet = $('<div></div>');
+    //           $tweet.text('@' + tweet.user + ': ' + tweet.message + tweet.created_at);
+    //           $tweet.appendTo($body);
+    //           userIndex3 ++;
+    //         }
+    //           userTweet3();
+    //       } ,0);
+    //     }
+    // $( ".userButton3 " ).on( "click", userTweet3);
+
+    // var userIndex4 = 0;
+    //       function userTweet4(){
+    //       setTimeout(function(){ 
+    //         if (streams.users.shawndrost[userIndex4] !== undefined){
+    //           var tweet = streams.users.shawndrost[userIndex4];
+    //           var $tweet = $('<div></div>');
+    //           $tweet.text('@' + tweet.user + ': ' + tweet.message + tweet.created_at);
+    //           $tweet.appendTo($body);
+    //           userIndex4 ++;
+    //         }
+    //           userTweet4();
+    //       } ,0);
+    //     }
+    // $( ".userButton4 " ).on( "click", userTweet4);
+
+    
 
       });
-
     </script>
   </body>
 </html>
