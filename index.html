@@ -98,14 +98,12 @@ li a:hover {
         var clicked = true;
         function displayNewTweet(){
           setTimeout(function(){ 
-            if (streams.home[index] !== undefined && clicked){
+            if (streams.home[index] !== undefined && clicked === true){
               var tweet = streams.home[index];
               var $tweet = $('<div></div>');
               $tweet.text('@' + tweet.user + ': ' + tweet.message + tweet.created_at);
               $tweet.appendTo($body);
               index ++;
-              $( ".userButton1" ).on( "click" , function(){var $test = $('<div>calling userTweet1</div>');$test.appendTo($body);userTweet1();
-                });
               }
                 displayNewTweet();
             } ,0);
@@ -119,17 +117,17 @@ li a:hover {
 //douglascalhoun
           function userTweet1(){
             var length = streams.users.douglascalhoun.length;
-            var $test = $('<div>hello</div>');
-            $test.appendTo($body);
+            // var $test = $('<div>hello</div>');
+            // $test.appendTo($body);
             clicked  = false;
             for (var i = 0; i < length; i++){
               var tweet = streams.users.douglascalhoun[i];
               var $tweet = $('<div></div>');
-              $tweet.text('@' + tweet.user + ': ' + tweet.message + tweet.created_at + i);
+              $tweet.text('@' + tweet.user + ': ' + tweet.message + tweet.created_at);
               $tweet.appendTo($body);
             }
         }
-
+      $( ".userButton1" ).on( "click" , userTweet1);
     // $( ".userButton1 " ).on( "click", userTweet1);
 
 //mracus
